@@ -1,7 +1,39 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Integration.create(
+  name: "Integration 1",
+  config: {
+    connections: [
+      {
+        auth: {
+          username: 'postgres',
+          password: 'postgres'
+        },
+        path: {
+          host: 'localhost',
+          database: 'analytics',
+          table: 'users'
+        },
+        field_mapping: [
+          ['user_local_field_1', 'user_external_field_1'],
+          ['user_local_field_2', 'user_external_field_2'],
+          ['user_local_field_3', 'user_external_field_3']
+        ]
+      },
+      {
+        auth: {
+          username: 'postgres',
+          password: 'postgres'
+        },
+        path: {
+          host: 'localhost',
+          database: 'analytics',
+          table: 'orders'
+        },
+        field_mapping: [
+          ['order_local_field_1', 'order_external_field_1'],
+          ['order_local_field_2', 'order_external_field_2'],
+          ['order_local_field_3', 'order_external_field_3']
+        ]
+      }
+    ]
+  }
+)
