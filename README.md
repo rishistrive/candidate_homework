@@ -111,3 +111,7 @@ There is an Grape API file at `app/api/api/integrations.rb` that establishes the
 After making your changes to the data model, ensure that this API endpoint returns the same set of data. Assume that there is a separately deployed front end application that relies on this endpoint.
 
 Additionally, you'll find a API spec at `spec/app/api/api/integrations_spec.rb` that tests the output of this API endpoint. Note that this API tests against the development database. While a real application should load fixtures or factory objects into the database, to simplify the setup process for this homework we will test against the development database.
+
+### Evaluation
+
+After running your database migration and data migration script, this API spec should still pass.
