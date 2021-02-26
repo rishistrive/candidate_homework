@@ -60,3 +60,54 @@ We'll say this model grew organically and required multiple connections to be in
 ### Evaluation
 
 To evaluate, we will run the same steps as the "Getting started" section above, and then apply your changes. After your changes are applied we will run the new database migration(s) and your script for data migration.
+
+## Prompt 2 - Maintain the API Contact
+
+There is an Grape API file at `app/api/api/integrations.rb` that establishes the show view for a given Integration. The response looks like this:
+
+````json
+{
+    "id": 1,
+    "name": "Integration 1",
+    "connections": [
+        {
+            "path": "localhost.analytics.users",
+            "field_mappings": [
+                {
+                    "local_field": "user_local_field_1",
+                    "external_field": "user_external_field_1"
+                },
+                {
+                    "local_field": "user_local_field_2",
+                    "external_field": "user_external_field_2"
+                },
+                {
+                    "local_field": "user_local_field_3",
+                    "external_field": "user_external_field_3"
+                }
+            ]
+        },
+        {
+            "path": "localhost.analytics.orders",
+            "field_mappings": [
+                {
+                    "local_field": "order_local_field_1",
+                    "external_field": "order_external_field_1"
+                },
+                {
+                    "local_field": "order_local_field_2",
+                    "external_field": "order_external_field_2"
+                },
+                {
+                    "local_field": "order_local_field_3",
+                    "external_field": "order_external_field_3"
+                }
+            ]
+        }
+    ]
+}
+````
+
+After making your changes to the data model, ensure that this API endpoint returns the same set of data. Assume that there is a separately deployed front end application that relies on this endpoint.
+
+Additionally, you'll find a API spec at `spec/app/api/api/integrations_spec.rb` that tests the output of this API endpoint. Note that this API tests against the development database. While a real application should load fixtures or factory objects into the database, to simplify the setup process for this homework we will test against the development database.

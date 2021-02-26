@@ -20,10 +20,13 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 30 } %>
   prepared_statements: false
 
-development:
+development: &development
   <<: *default
   database: candidate_homework_development
   username: candidate_homework
   # password:
   host: localhost
   port: 5432
+
+test:
+  <<: *development
