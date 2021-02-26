@@ -1,5 +1,11 @@
 # Candidate Homework
 
+Thank you for your interest in workting with Catalyst! This repo is a boilerplate Rails 5.2 application that is in need of some work. Below are two prompts for changes to this application, and we want to see how you solve this application. Completing this this work should not take more than two or three hours.
+
+## How to submit
+
+To get started, please fork this repo, and create a new branch with your name. When finished working, open a pull request from you feature branch containing all of your changes, into the master branch within your fork. That way we can see the changes, and comment and ask questisons.
+
 ## Getting started
 
 * Install Postgres
