@@ -65,7 +65,7 @@ We'll say this model grew organically and required multiple connections to be st
 
 ### Evaluation
 
-To evaluate, we will run the same steps as the "Getting started" section above, and then apply your changes. After your changes are applied we will run the new database migration(s) and your script for data migration.
+To evaluate, we will run the same steps as the "Getting started" section above, and then apply your changes. After your changes are applied we will run the new database migration(s) and your script for data migration. Please include instructions for how to run your scripts.
 
 ## Prompt 2 - Maintain the API Contact
 
