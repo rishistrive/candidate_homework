@@ -1,10 +1,10 @@
 # Candidate Homework
 
-Thank you for your interest in working with Catalyst! This repo is a boilerplate Rails 5.2 application that is in need of some work. Below are two prompts for changes to this application, and we want to see how you solve this application. Completing this this work should not take more than two or three hours.
+Thank you for your interest in working with Catalyst! This repo is a boilerplate Rails 5.2 application that is in need of some work. Below are two prompts for changes that are needed. We want to see how you approach these challenges. Completing this this work should not take more than two or three hours.
 
 ## How to submit
 
-To get started, please fork this repo, and create a new branch with your name. When finished working, open a pull request from you feature branch containing all of your changes, into the master branch within your fork. That way we can see the changes, and comment and ask questions.
+To get started, please fork this repo, and create a new branch with your name. When finished working, open a pull request from you feature branch containing all of your changes, into the master branch within your fork. That way we can see the changes, comment, and ask questions.
 
 ## Getting started
 
@@ -57,7 +57,7 @@ You'll find an Integration model that holds connections in it's `config` jsonb c
 }
 ````
 
-We'll say this model grew organically and required multiple connections to be in a single integration record. Now we need to split it up. We need to get individual records for items in the `field_mappings` portion of a connection, while maintaining it's connection to the `path` information.
+We'll say this model grew organically and required multiple connections to be stored in a single integration record. Now we need to split it up. We need to get individual records for elements in the `field_mappings` portion of a connection, while maintaining it's connection to the `path` information.
 
 1. Add additional models where needed.
 2. Write database migrations to add the new table or tables.
