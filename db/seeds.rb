@@ -1,4 +1,5 @@
 Integration.create(
+  id: 1,
   name: "Integration 1",
   config: {
     connections: [

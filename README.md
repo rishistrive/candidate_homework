@@ -4,7 +4,8 @@
 
 * Install Postgres
 * Ensure there is a user called `candidate_homework` with an empty password, or update the username and password in `config/database.yml`
-* run `rake db:setup`
+* run `rake db:create`
+* run `rake db:migrate`
 * run `rake db:seed`
 
 ## Prompt 1 - Data model changes and migration
