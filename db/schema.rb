@@ -10,14 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_135959) do
+ActiveRecord::Schema.define(version: 2021_09_06_161733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "connections", force: :cascade do |t|
+    t.bigint "integration_id", null: false
+    t.string "username", null: false
+    t.string "password", null: false
+    t.string "host", null: false
+    t.string "database", null: false
+    t.string "table", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["integration_id"], name: "index_connections_on_integration_id"
+    t.index ["username"], name: "index_connections_on_username"
+  end
+
+  create_table "field_mappings", force: :cascade do |t|
+    t.bigint "connection_id", null: false
+    t.string "local_field", null: false
+    t.string "external_field", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["connection_id"], name: "index_field_mappings_on_connection_id"
+  end
+
   create_table "integrations", force: :cascade do |t|
     t.string "name"
-    t.jsonb "config", default: {}, comment: "Arbitrary JSON that the FE will parse to generate layout data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,13 +1,10 @@
-class Integration < ApplicationRecord
-  def connections
-    config['connections'].map do |connection|
-      auth = OpenStruct.new(connection['auth'])
-      path = OpenStruct.new(connection['path'])
-      field_mappings = connection['field_mapping'].map do |mapping|
-        OpenStruct.new(local_field: mapping[0], external_field: mapping[1])
-      end
+# frozen_string_literal: true
 
-      OpenStruct.new(auth: auth, path: path, field_mappings: field_mappings)
-    end
-  end
+# Model to store integration data
+class Integration < ApplicationRecord
+  has_many :connections, dependent: :destroy
+
+  accepts_nested_attributes_for :connections, reject_if: :all_blank, allow_destroy: true
+
+  validates :name, presence: true
 end
